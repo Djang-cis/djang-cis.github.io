@@ -1,71 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Djangs.cis</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        .article {
-            background-color: white;
-            margin: 15px;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .article h2 {
-            color: #007bff;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        footer a {
-            color: #ffeb3b;
-            text-decoration: none;
-        }
-    </style>
+    <title>Formulaire de Dépenses</title>
 </head>
 <body>
+    <h2>Formulaire de Dépenses</h2>
+    <form id="expenseForm">
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required><br><br>
+        
+        <label for="intitule">Intitulé Dépense :</label>
+        <input type="text" id="intitule" name="intitule" required><br><br>
+        
+        <label for="commentaire">Commentaire :</label><br>
+        <textarea id="commentaire" name="commentaire"></textarea><br><br>
+        
+        <label for="date">Date :</label>
+        <input type="date" id="date" name="date" required><br><br>
+        
+        <label for="somme">Somme :</label>
+        <input type="number" id="somme" name="somme" required><br><br>
+        
+        <button type="submit">Enregistrer la dépense</button>
+    </form>
 
-<header>
-    <h1>DJANG6C</h1>
-</header>
+    <br>
+    <!-- Lien vers la deuxième page d'affichage des données -->
+    <a href="view_data.html">Voir les dépenses enregistrées</a>
 
-<div class="article">
-    <h2> CISSE</h2>
-    <p>  </p>
-</div>
-
-<div class="article">
-    <h2>2</h2>
-    <p>DJANGO.</p>
-</div>
-
-<div class="article">
-    <h2>3</h2>
-    <p>.</p>
-</div>
-
-<footer>
-    <p>Contactez-moi : <a href="mailto:djang@gmail.com">djang@gmail.com</a> | Téléphone : 00.01.02.03.04.05</p>
-</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
