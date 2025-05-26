@@ -1,14 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Page Github Djangs</title>
+    <title>Connexion - Djang6is</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to the First Page of Github Djangs</h1>
-    <p><iframe src="https://docs.google.com/viewer?url=https://ocrepebucket.s3.eu-west-3.amazonaws.com/OCREPEPDF.pdf&embedded=true" width="100%" height="600px">
-</iframe></p>
-    <p>Stay tuned for more updates!</p>
+    <h1>Djang6is</h1>
+    <p>Un petit formulaire pour enregistrer les dépenses familles 6c.</p>
+
+    <form id="loginForm">
+        <label for="loginEmail">Email :</label>
+        <input type="email" id="loginEmail" placeholder="Entrez votre email" required>
+        
+        <label for="loginPassword">Mot de passe :</label>
+        <input type="password" id="loginPassword" placeholder="Entrez votre mot de passe" required>
+        
+        <button type="submit">Se connecter</button>
+    </form>
+
+    <footer>Merci de fermer la page si vous n'avez plus besoin.</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"></script>
+    <script src="login.js" type="module"></script>
 </body>
 </html>

@@ -1,0 +1,109 @@
+
+### Héberger votre premier site avec Nginx
+
+---
+
+#### 2. Créer votre premier site web
+1. **Créer un répertoire pour le site** :
+   ```bash
+   sudo mkdir -p /var/www/mon-site
+   ```
+2. **Attribuer les permissions appropriées** :
+   ```bash
+   sudo chown -R $USER:$USER /var/www/mon-site
+   sudo chmod -R 755 /var/www/mon-site
+   ```
+3. **Créer un fichier `index.html`** :
+   ```bash
+   nano /var/www/mon-site/index.html
+   ```
+   Ajouter ce contenu :
+   ```html
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>Bienvenue sur Mon Site</title>
+   </head>
+   <body>
+       <h1>Ceci est ma première page hébergée avec Nginx !</h1>
+   </body>
+   </html>
+   ```
+
+---
+
+#### 3. Configurer Nginx pour le site
+1. **Créer un fichier de configuration pour le site** :
+   ```bash
+   sudo nano /etc/nginx/sites-available/mon-site
+   ```
+   Contenu du fichier :
+   ```nginx
+   server {
+       listen 80;
+       server_name mon-site.local;
+
+       root /var/www/mon-site;
+       index index.html;
+
+       location / {
+           try_files $uri $uri/ =404;
+       }
+   }
+   ```
+2. **Activer la configuration** :
+   ```bash
+   sudo ln -s /etc/nginx/sites-available/mon-site /etc/nginx/sites-enabled/
+   ```
+3. **Tester la configuration de Nginx** :
+   ```bash
+   sudo nginx -t
+   ```
+   Si tout est correct, redémarrer Nginx :
+   ```bash
+   sudo systemctl reload nginx
+   ```
+
+---
+
+#### 4. Ajouter un nom de domaine (facultatif)
+1. **Modifier votre fichier `hosts` pour un domaine local** :
+   ```bash
+   sudo nano /etc/hosts
+   ```
+   Ajouter cette ligne :
+   ```plaintext
+   127.0.0.1   mon-site.local
+   ```
+
+---
+
+#### 5. Tester votre site
+1. Ouvrir un navigateur web et aller sur :
+   ```
+   http://mon-site.local
+   ```
+   Si vous hébergez le site sur un serveur distant, remplacez `mon-site.local` par l’adresse IP du serveur.
+
+---
+
+### Résumé : Commandes clés
+- Créer le répertoire :  
+  ```bash
+  sudo mkdir -p /var/www/mon-site
+  ```
+- Ajouter le contenu HTML :  
+  ```bash
+  nano /var/www/mon-site/index.html
+  ```
+- Configurer Nginx :  
+  ```bash
+  sudo nano /etc/nginx/sites-available/mon-site
+  sudo ln -s /etc/nginx/sites-available/mon-site /etc/nginx/sites-enabled/
+  sudo nginx -t
+  sudo systemctl reload nginx
+  ```
+- Modifier le fichier `hosts` :  
+  ```bash
+  sudo nano /etc/hosts
+  ```

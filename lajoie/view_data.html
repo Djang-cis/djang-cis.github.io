@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Dépenses - Djang6is</title>
+    <link rel="stylesheet" href="styles.css">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Bibliothèques jsPDF et autoTable pour télécharger en PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <h1 class="animate__animated animate__slideInLeft">Djang6is</h1>
+    <p>Un petit formulaire pour enregistrer les dépenses de la famille 6c.</p>
+
+    <!-- Barre de recherche -->
+    <input type="text" id="searchInput" placeholder="Rechercher..." onkeyup="searchTable()">
+    
+    <h2>Liste des Dépenses Enregistrées</h2>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Prénom</th>
+                <th onclick="sortTable(1)">Intitulé</th>
+                <th onclick="sortTable(2)">Commentaire</th>
+                <th onclick="sortTable(3)">Date</th>
+                <th onclick="sortTable(4)">Somme</th>
+                <th onclick="sortTable(6)">Total Cumulatif/personne</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les lignes de données seront insérées ici -->
+        </tbody>
+    </table>
+
+    <!-- Bouton pour télécharger en PDF -->
+    <button onclick="downloadPDF()">Télécharger en PDF</button>
+	<div id="calculBox">
+		<h3>Calcul des Contributions</h3>
+		<button onclick="calculateContributions()">Calculer</button>
+		<div id="resultBox"></div>
+	</div>
+
+
+    <footer>Merci de fermer la page si vous n'avez plus besoin.</footer>
+
+    <script src="view_data.js" type="module"></script>
+</body>
+</html>
