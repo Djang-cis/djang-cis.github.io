@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire - Djang6is</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Djang6is</h1>
+    <p>Un petit formulaire pour enregistrer les dépenses famille 6c.</p>
+
+    <form id="expenseForm">
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" placeholder="Entrez votre prénom" required>
+        
+        <label for="intitule">Intitulé Dépense :</label>
+        <input type="text" id="intitule" placeholder="Entrez l'intitulé de la dépense" required>
+        
+        <label for="commentaire">Commentaire :</label>
+        <textarea id="commentaire" placeholder="Ajoutez un commentaire"></textarea>
+        
+        <label for="date">Date :</label>
+        <input type="date" id="date" required>
+        
+        <label for="somme">Somme :</label>
+        <input type="number" id="somme" placeholder="Entrez le montant en euros" required>
+        
+        <button type="submit">Enregistrer la dépense</button>
+    </form>
+
+    <a href="view_data.html">Voir les dépenses enregistrées</a>
+
+    <footer>Merci de fermer la page si vous n'avez plus besoin.</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"></script>
+    <script src="formulaire.js" type="module"></script>
+</body>
+</html>

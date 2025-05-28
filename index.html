@@ -3,69 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le site de Djang</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        .article {
-            background-color: white;
-            margin: 15px;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .article h2 {
-            color: #007bff;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        footer a {
-            color: #ffeb3b;
-            text-decoration: none;
-        }
-    </style>
+    <title>Connexion - Djang6is</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Djang6is</h1>
+    <p>Un petit formulaire pour enregistrer les dépenses familles 6c.</p>
 
-<header>
-    <h1>Le site de Djang</h1>
-</header>
+    <form id="loginForm">
+        <label for="loginEmail">Email :</label>
+        <input type="email" id="loginEmail" placeholder="Entrez votre email" required>
+        
+        <label for="loginPassword">Mot de passe :</label>
+        <input type="password" id="loginPassword" placeholder="Entrez votre mot de passe" required>
+        
+        <button type="submit">Se connecter</button>
+    </form>
 
-<div class="article">
-    <h2>1</h2>
-    <p>Content.</p>
-</div>
+    <footer>Merci de fermer la page si vous n'avez plus besoin.</footer>
 
-<div class="article">
-    <h2>2</h2>
-    <p>Content.</p>
-</div>
-
-<div class="article">
-    <h2>Introduction à la programmation en Rust</h2>
-    <p>Plongez dans le monde de Rust, un langage de programmation conçu pour la sécurité et la performance.</p>
-</div>
-
-<footer>
-    <p>Contactez-moi : <a href="mailto:djang@gmail.com">djang@gmail.com</a> | Téléphone : 00.01.02.03.04.05</p>
-</footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"></script>
+    <script src="login.js" type="module"></script>
 </body>
 </html>
